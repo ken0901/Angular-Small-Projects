@@ -3,18 +3,16 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppointmentListComponent } from './projects/appointment-list/appointment-list.component';
+import { AppointmentModule } from './projects/appointment-project/appointment-module/appointment-module.module';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        AppointmentListComponent
-        
+        AppComponent
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
-       
+        AppRoutingModule,
+        AppointmentModule
     ],
     providers: [
     ],
