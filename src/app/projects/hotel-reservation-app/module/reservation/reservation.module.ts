@@ -14,6 +14,11 @@ import { ReservationListComponent } from '../../component/reservation-list/reser
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ReservationComponent,
+    ReservationFormComponent,
+    ReservationListComponent
   ]
 })
 export class ReservationModule { }

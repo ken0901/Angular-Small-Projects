@@ -16,7 +16,7 @@ import { HotelReservationAppModule } from './projects/hotel-reservation-app/modu
         AppRoutingModule,
         AppointmentModule,
         BookManagementSystemModule,
-        HotelReservationAppModule
+        HotelReservationAppModule,
     ],
     providers: [
     ],

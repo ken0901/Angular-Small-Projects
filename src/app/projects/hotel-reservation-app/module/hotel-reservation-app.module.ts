@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HotelReservationAppComponent } from '../hotel-reservation-app.component';
 import { HomeModule } from './home/home.module';
 import { ReservationModule } from './reservation/reservation.module';
+import { HotelReservationAppRoutingModule } from './hotel-reservation-app-routing.module';
 
 
 
@@ -13,7 +14,8 @@ import { ReservationModule } from './reservation/reservation.module';
   imports: [
     CommonModule,
     HomeModule,
-    ReservationModule
+    ReservationModule,
+    HotelReservationAppRoutingModule
   ],
   exports: [
     HotelReservationAppComponent
