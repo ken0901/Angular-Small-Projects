@@ -4,16 +4,17 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppointmentModule } from './projects/appointment-project/appointment-module/appointment-module.module';
-import { FormsModule } from '@angular/forms';
+import { BookManagementSystemModule } from './projects/book-management-system/module/book-management-system.module';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        AppointmentModule
+        AppointmentModule,
+        BookManagementSystemModule
     ],
     providers: [
     ],
