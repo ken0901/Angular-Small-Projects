@@ -4,7 +4,7 @@ import { HotelReservationAppComponent } from '../hotel-reservation-app.component
 import { HomeModule } from './home/home.module';
 import { ReservationModule } from './reservation/reservation.module';
 import { HotelReservationAppRoutingModule } from './hotel-reservation-app-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { HotelReservationAppRoutingModule } from './hotel-reservation-app-routin
     CommonModule,
     HomeModule,
     ReservationModule,
-    HotelReservationAppRoutingModule
+    HotelReservationAppRoutingModule,
+    HttpClientModule
   ],
   exports: [
     HotelReservationAppComponent

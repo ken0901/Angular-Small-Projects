@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Reservation } from '../models/reservation';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,16 +9,14 @@ import { Reservation } from '../models/reservation';
 export class ReservationService {
 
   private reservations: Reservation[] = [];
+  private apiUrl = "http://localhost:3001";
   
-  constructor(){
-    let savedReservations = localStorage.getItem("reservation");
-    this.reservations = savedReservations? JSON.parse(savedReservations) : [];
-  }
+  constructor (private http: HttpClient){}
 
   // CRUD
   
-  getReservations(): Reservation[] {
-    return this.reservations;
+  getReservations(): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(this.apiUrl + "/reservations");
   }
 
   getReservation(id: string): Reservation | undefined {
@@ -27,7 +27,6 @@ export class ReservationService {
     reservation.id = Date.now().toString();
 
     this.reservations.push(reservation);
-    localStorage.setItem("reservation", JSON.stringify(this.reservations));
   }
 
   deleteReservation(id: string): void {
@@ -35,12 +34,10 @@ export class ReservationService {
     let deleteCount = 1;
 
     this.reservations.splice(index,deleteCount);
-    localStorage.setItem("reservation", JSON.stringify(this.reservations));
   }
 
   updateReservation(id: string, updatedReservation: Reservation): void {
     let index = this.reservations.findIndex(res => res.id === id);
     this.reservations[index] = updatedReservation;
-    localStorage.setItem("reservation", JSON.stringify(this.reservations));
   }
 }
