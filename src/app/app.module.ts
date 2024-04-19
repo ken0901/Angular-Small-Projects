@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppointmentModule } from './projects/appointment-project/appointment-module/appointment-module.module';
 import { BookManagementSystemModule } from './projects/book-management-system/module/book-management-system.module';
 import { HotelReservationAppModule } from './projects/hotel-reservation-app/module/hotel-reservation-app.module';
+import { PaintingAppModule } from './projects/painting-app/painting-app.module';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { HotelReservationAppModule } from './projects/hotel-reservation-app/modu
         AppRoutingModule,
         AppointmentModule,
         BookManagementSystemModule,
-        HotelReservationAppModule,
+        // HotelReservationAppModule,
+        PaintingAppModule
     ],
     providers: [
     ],
