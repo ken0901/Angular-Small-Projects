@@ -4,8 +4,8 @@ import { PaintingAppComponent } from './painting-app.component';
 import { ProductModule } from './product/product.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PaintingAppRoutingModule } from './painting-app-routing.module';
-
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,9 @@ import { PaintingAppRoutingModule } from './painting-app-routing.module';
     CommonModule,
     ProductModule,
     HttpClientModule,
-    PaintingAppRoutingModule
+    PaintingAppRoutingModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   exports: [
     PaintingAppComponent
