@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PaintingAppRoutingModule } from './painting-app-routing.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
     HttpClientModule,
     PaintingAppRoutingModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    CartModule
   ],
   exports: [
     PaintingAppComponent
