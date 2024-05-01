@@ -6,10 +6,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BookManagementRoutingModule } from './book-management-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { BookReducer } from './books/book.reducer';
+import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   declarations: [
-    BookManagementComponent
+    BookManagementComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
