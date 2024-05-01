@@ -8,6 +8,7 @@ import { BookManagementSystemModule } from './projects/book-management-system/mo
 import { HotelReservationAppModule } from './projects/hotel-reservation-app/module/hotel-reservation-app.module';
 import { PaintingAppModule } from './projects/painting-app/painting-app.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookManagementModule } from './projects/ngrx-book-management/book-management.module';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         BookManagementSystemModule,
         // HotelReservationAppModule,
         PaintingAppModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        BookManagementModule
     ],
     providers: [
     ],
