@@ -8,6 +8,9 @@ import { StoreModule } from '@ngrx/store';
 import { BookReducer } from './books/book.reducer';
 import { BookListComponent } from './book-list/book-list.component';
 import { AppState } from './app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { BookEffects } from './books/book.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { AppState } from './app.state';
     CommonModule,
     FormsModule,
     BookManagementRoutingModule,
-    StoreModule.forRoot<AppState>({book: BookReducer})
+    StoreModule.forRoot<AppState>({book: BookReducer}),
+    EffectsModule.forRoot([BookEffects]),
+    StoreDevtoolsModule.instrument()
   ],
   exports: [
     BookManagementComponent
