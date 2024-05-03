@@ -9,6 +9,7 @@ import { HotelReservationAppModule } from './projects/hotel-reservation-app/modu
 import { PaintingAppModule } from './projects/painting-app/painting-app.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookManagementModule } from './projects/ngrx-book-management/book-management.module';
+import { SocialPlatformModule } from './projects/social-platform/social-platform.module';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { BookManagementModule } from './projects/ngrx-book-management/book-manag
         // HotelReservationAppModule,
         PaintingAppModule,
         BrowserAnimationsModule,
-        BookManagementModule
+        BookManagementModule,
+        SocialPlatformModule
     ],
     providers: [
     ],
