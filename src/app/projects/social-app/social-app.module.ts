@@ -5,6 +5,7 @@ import { SocialAppRoutingModule } from './social-app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { SocialAppComponent } from './social-app.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     CommonModule,
     FormsModule,
-    SocialAppRoutingModule
+    SocialAppRoutingModule,
+    HttpClientModule
   ],
   exports: [
     SocialAppComponent,
