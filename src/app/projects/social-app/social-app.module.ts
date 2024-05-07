@@ -6,12 +6,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SocialAppComponent } from './social-app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 
 @NgModule({
   declarations: [
     SocialAppComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

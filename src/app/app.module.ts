@@ -24,7 +24,7 @@ import { SocialAppModule } from './projects/social-app/social-app.module';
         // HotelReservationAppModule,
         PaintingAppModule,
         BrowserAnimationsModule,
-        BookManagementModule,
+        // BookManagementModule,
         SocialPlatformModule,
         SocialAppModule
     ],
