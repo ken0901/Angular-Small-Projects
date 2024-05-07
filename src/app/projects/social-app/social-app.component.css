@@ -4,4 +4,15 @@
     width: 100%;
 
     flex-grow: 1;
+    box-sizing: border-box;
 }
+
+
+/* 
+:root {
+    --bg-color: white;
+    --header-color: white;
+    --border-color: rgb(230,230,230);
+}
+
+*/
