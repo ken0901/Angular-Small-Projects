@@ -2,6 +2,9 @@
 
 /* @import "~bootstrap/dist/css/bootstrap.min.css" */
 /* @import url("@angular/material/prebuilt-themes/indigo-pink.css"); */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
 
 html, body { height: 100%; }
 body,p,h1,h2,h3,h4 { 
@@ -20,7 +23,7 @@ app-root {
 
 .row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .column {
@@ -42,6 +45,10 @@ app-root {
 
 .wrap {
     flex-wrap: wrap;
+}
+
+.gap-05 {
+    gap: 0.5rem;
 }
 
 .gap-1 {
@@ -89,4 +96,9 @@ app-root {
 
 .text-right {
     text-align: right;
+}
+
+/* theme-overrides  */
+.p-rating-cancel-item {
+    display: none;
 }

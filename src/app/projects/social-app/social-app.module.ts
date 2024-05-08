@@ -4,27 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { SocialAppRoutingModule } from './social-app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { SocialAppComponent } from './social-app.component';
-import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
-import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
   declarations: [
     SocialAppComponent,
-    HomeComponent,
     FooterComponent,
     HeaderComponent,
-    ProductComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     SocialAppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
     SocialAppComponent,

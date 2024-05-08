@@ -2,13 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product, Products } from '../interface/types';
 import { ProductComponent } from '../components/product/product.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  imports: [ProductComponent,CommonModule],
+  standalone:true
 })
 export class HomeComponent  implements OnInit{
+
 
   products: Product[] = [];
 
@@ -19,5 +23,9 @@ export class HomeComponent  implements OnInit{
       console.log(products.items);
       this.products = products.items;
     })
+  }
+
+  onProductOutput(product: Product) {
+    console.log(product, 'Output');
   }
 }
