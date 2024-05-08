@@ -7,6 +7,7 @@ import { SocialAppComponent } from './social-app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -21,6 +22,9 @@ import { HeaderComponent } from './layout/header/header.component';
     FormsModule,
     SocialAppRoutingModule,
     HttpClientModule,
+  ],
+  providers:[
+    provideAnimations()
   ],
   exports: [
     SocialAppComponent,
