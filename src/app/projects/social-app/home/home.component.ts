@@ -4,20 +4,32 @@ import { Product, Products } from '../interface/types';
 import { ProductComponent } from '../components/product/product.component';
 import { CommonModule } from '@angular/common';
 import { PaginatorModule } from 'primeng/paginator';
+import { EditPopupComponent } from '../components/edit-popup/edit-popup.component';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports: [ProductComponent,CommonModule,PaginatorModule],
+  imports: [ProductComponent,CommonModule,PaginatorModule, EditPopupComponent,ButtonModule],
   standalone:true
 })
 export class HomeComponent  implements OnInit{
 
-
   products: Product[] = [];
   totalRecords: number = 0;
   rows: number = 5;
+
+  displayAddPopup: boolean = false;
+  displayEditPopup: boolean = false;
+
+  selectedProduct: Product = {
+    id: 0,
+    name: '',
+    image: '',
+    price: '',
+    rating: 0,
+  };
 
   constructor(private productService: ProductsService){}
 
@@ -32,9 +44,9 @@ export class HomeComponent  implements OnInit{
   fetchProducts(page: number, perPage: number) {
     this.productService.getProducts('http://localhost:3000/clothes', { page, perPage})
       .subscribe({
-        next: (products: Products) => {
-          this.products = products.items;
-          this.totalRecords = products.total;
+        next: (data: Products) => {
+          this.products = data.items;
+          this.totalRecords = data.total;
         },
         error: (error) => {
           console.log(error);
@@ -87,5 +99,34 @@ export class HomeComponent  implements OnInit{
         },
       }
     );
+  }
+
+  onConfirmEdit(product: Product) {
+    if(!this.selectedProduct.id){
+      return;
+    }
+    this.editProduct(product, this.selectedProduct.id);
+    this.displayEditPopup = false;
+  }
+
+  onConfirmAdd(product: Product) {
+    this.addProduct(product);
+    this.displayAddPopup = false;
+  }
+
+  toggleEditPopup(product: Product) {
+    this.selectedProduct = product;
+    this.displayEditPopup = true;
+  }
+
+  toggleAddPopup() {
+    this.displayAddPopup = true;
+  }
+
+  toggleDeletePopup(product: Product) {
+    if(!product.id){
+      return;
+    }
+    this.deleteProduct(product.id);
   }
 }
