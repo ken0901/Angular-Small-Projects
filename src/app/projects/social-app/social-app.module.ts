@@ -8,13 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     SocialAppComponent,
     FooterComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +23,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
     FormsModule,
     SocialAppRoutingModule,
     HttpClientModule,
+    RouterModule
   ],
   providers:[
     provideAnimations()
