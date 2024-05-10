@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product, Products } from '../interface/types';
 import { ProductComponent } from '../components/product/product.component';
 import { CommonModule } from '@angular/common';
-import { PaginatorModule } from 'primeng/paginator';
+import { Paginator, PaginatorModule } from 'primeng/paginator';
 import { EditPopupComponent } from '../components/edit-popup/edit-popup.component';
 import { ButtonModule } from 'primeng/button';
 
@@ -15,6 +15,8 @@ import { ButtonModule } from 'primeng/button';
   standalone:true
 })
 export class HomeComponent  implements OnInit{
+
+  @ViewChild('paginator') paginator: Paginator;
 
   products: Product[] = [];
   totalRecords: number = 0;
@@ -59,12 +61,17 @@ export class HomeComponent  implements OnInit{
     this.fetchProducts(event.page, event.rows);
   }
 
+  resetPaginator() {
+    this.paginator?.changePage(0);
+  }
+
   editProduct(product: Product, id: number){
     this.productService.editProduct(`http://localhost:3000/clothes/${id}`, product).subscribe(
       {
         next: (data) => {
           console.log(data);
           this.fetchProducts(0, this.rows);
+          this.resetPaginator();
         },
         error: (error) => {
           console.log(error);
@@ -79,6 +86,7 @@ export class HomeComponent  implements OnInit{
         next: (data) => {
           console.log(data);
           this.fetchProducts(0, this.rows);
+          this.resetPaginator();
         },
         error: (error) => {
           console.log(error);
@@ -93,6 +101,7 @@ export class HomeComponent  implements OnInit{
         next: (data) => {
           console.log(data);
           this.fetchProducts(0, this.rows);
+          this.resetPaginator();
         },
         error: (error) => {
           console.log(error);
