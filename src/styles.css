@@ -98,7 +98,16 @@ app-root {
     text-align: right;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 /* theme-overrides  */
 .p-rating-cancel-item {
     display: none;
+}
+
+input.ng-invalid {
+    border: 1px solid red;
 }
