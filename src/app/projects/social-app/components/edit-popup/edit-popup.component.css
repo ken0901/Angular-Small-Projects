@@ -1,0 +1,11 @@
+.form-wrapper .row span{
+    flex: 1
+}
+
+.form-wrapper .row input{
+    flex:3
+}
+
+.form-wrapper .rating {
+    margin-top:0.5rem;
+}
