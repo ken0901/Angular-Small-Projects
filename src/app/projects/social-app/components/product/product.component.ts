@@ -45,4 +45,11 @@ export class ProductComponent implements OnInit{
   deleteProduct() {
     this.delete.emit(this.product);
   }
+
+  truncateName(name: string) {
+    if(name.length > 16) {
+      return name.slice(0,16) + '...';
+    }
+    return name;
+  }
 }
