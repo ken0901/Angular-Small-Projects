@@ -6,13 +6,15 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
+import { DollarSignPipe } from '../../pipes/dollar-sign.pipe';
+import { TruncateNamePipe } from '../../pipes/truncate-name.pipe';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
   standalone: true,
-  imports: [RatingModule,FormsModule,ButtonModule,ConfirmPopupModule,ToastModule],
+  imports: [RatingModule,FormsModule,ButtonModule,ConfirmPopupModule,ToastModule, DollarSignPipe, TruncateNamePipe],
   providers: [ConfirmationService]
 })
 export class ProductComponent implements OnInit{
@@ -46,10 +48,10 @@ export class ProductComponent implements OnInit{
     this.delete.emit(this.product);
   }
 
-  truncateName(name: string) {
-    if(name.length > 16) {
-      return name.slice(0,16) + '...';
-    }
-    return name;
-  }
+  // truncateName(name: string) {
+  //   if(name.length > 16) {
+  //     return name.slice(0,16) + '...';
+  //   }
+  //   return name;
+  // }
 }
