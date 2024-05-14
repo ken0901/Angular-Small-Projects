@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookManagementModule } from './projects/ngrx-book-management/book-management.module';
 import { SocialPlatformModule } from './projects/social-platform/social-platform.module';
 import { SocialAppModule } from './projects/social-app/social-app.module';
+import { ComponentCoreDirectivesPipesModule } from './projects/angular-university/component-core-directives-pipes/component-core-directives-pipes.module';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { SocialAppModule } from './projects/social-app/social-app.module';
         BrowserAnimationsModule,
         // BookManagementModule,
         SocialPlatformModule,
-        SocialAppModule
+        SocialAppModule,
+        ComponentCoreDirectivesPipesModule
     ],
     providers: [
     ],
