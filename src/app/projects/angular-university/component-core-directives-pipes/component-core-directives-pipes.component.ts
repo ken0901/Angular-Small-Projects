@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { COURSES } from 'src/data/db-data';
+import { Course } from './model/course';
 
 @Component({
   selector: 'app-component-core-directives-pipes',
@@ -12,4 +13,8 @@ export class ComponentCoreDirectivesPipesComponent {
   rxjsCourse = COURSES[1];
 
   ngRxCourse = COURSES[2];
+
+  onCourseSelected(course: Course) {
+    console.log("app component - button clicked", course);
+  }
 }
