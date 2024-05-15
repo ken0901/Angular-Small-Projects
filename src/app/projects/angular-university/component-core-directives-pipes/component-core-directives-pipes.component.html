@@ -7,8 +7,20 @@
 <div>
     <div class="courses">
 
-        @for (course of courses; track course.id) {
-            <app-course-card (courseSelected)="onCourseSelected($event)" [course]="course"></app-course-card>
+        @for (course of courses; track course.id; let index = $index; let count = $count; let first=$first; let last = $last; let even = $even; let odd = $odd;) {
+            <!-- <h1>Count: {{count}}</h1> -->
+            <app-course-card 
+                (courseSelected)="onCourseSelected($event)" 
+                [index]="index" 
+                [class.is-first]="first"
+                [class.is-last]="last"
+                [class.is-even]="even"
+                [class.is-odd]="odd"
+                [course]="course"
+            ></app-course-card>
+        }
+        @empty {
+            <h1>No courses found!</h1>
         }
     </div>
 </div>

@@ -9,7 +9,7 @@ import { Course } from './model/course';
 })
 export class ComponentCoreDirectivesPipesComponent {
   
-  courses = COURSES;
+  courses = [...COURSES];
 
   coreCourse = COURSES[0];
 
