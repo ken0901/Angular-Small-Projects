@@ -8,6 +8,9 @@ import { Course } from './model/course';
   styleUrls: ['./component-core-directives-pipes.component.css']
 })
 export class ComponentCoreDirectivesPipesComponent {
+  
+  courses = COURSES;
+
   coreCourse = COURSES[0];
 
   rxjsCourse = COURSES[1];
