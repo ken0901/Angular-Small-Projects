@@ -1,9 +1,9 @@
-<div class="course-card">
+<div class="course-card" *ngIf="course">
     <div class="course-title">
         {{index}} {{ course.description }}
     </div>
 
-    @if(course.id == 1){
+    <!-- @if(course.id == 1){
         <h2>Course with Id 1 detected!</h2>
     }
     @else if(course.iconUrl) {
@@ -11,7 +11,12 @@
     }
     @else {
         <h2>No image available!</h2>
-    }
+    } -->
+
+    <img width="300" alt="Angular Logo" [src]="course.iconUrl" *ngIf="isImageVisible(); else noImage">
+    <ng-template #noImage>
+        <p>No image is available.</p>
+    </ng-template>
 
     <div class="course-description">
         {{course.longDescription}}
