@@ -20,4 +20,8 @@ export class ComponentCoreDirectivesPipesComponent {
   onCourseSelected(course: Course) {
     console.log("app component - button clicked", course);
   }
+
+  trackCourse(index: number, course: Course) {
+    return course.id;
+  }
 }
