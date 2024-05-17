@@ -11,11 +11,12 @@ export class ComponentCoreDirectivesPipesComponent {
   
   courses = [...COURSES];
 
-  coreCourse = COURSES[0];
+  startDate = new Date();
+  title = COURSES[0].description;
+  price: number = 9.995646;
+  rate: number = 0.67;
 
-  rxjsCourse = COURSES[1];
-
-  ngRxCourse = COURSES[2];
+  course = COURSES[0];
 
   onCourseSelected(course: Course) {
     console.log("app component - button clicked", course);
