@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { COURSES } from 'src/data/db-data';
 import { Course } from './model/course';
 import { CourseCardComponent } from './course-card/course-card.component';
@@ -8,7 +8,7 @@ import { CourseCardComponent } from './course-card/course-card.component';
   templateUrl: './component-core-directives-pipes.component.html',
   styleUrls: ['./component-core-directives-pipes.component.css']
 })
-export class ComponentCoreDirectivesPipesComponent {
+export class ComponentCoreDirectivesPipesComponent implements AfterViewInit{
   
   courses = [...COURSES];
 
@@ -24,6 +24,14 @@ export class ComponentCoreDirectivesPipesComponent {
   rate: number = 0.67;
 
   course = COURSES[0];
+
+  constructor() {
+    console.log("constructor containerDiv" , this.containerDiv);
+  }
+
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit containerDiv" , this.containerDiv);
+  }
 
   onCourseSelected(course: Course) {
     console.log("app component - button clicked", course);
