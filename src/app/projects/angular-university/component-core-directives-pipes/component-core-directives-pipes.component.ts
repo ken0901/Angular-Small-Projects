@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { COURSES } from 'src/data/db-data';
 import { Course } from './model/course';
 import { CourseCardComponent } from './course-card/course-card.component';
@@ -12,8 +12,11 @@ export class ComponentCoreDirectivesPipesComponent {
   
   courses = [...COURSES];
 
-  @ViewChild(CourseCardComponent)
+  @ViewChild('cardRef', {read: ElementRef})
   card: CourseCardComponent;
+
+  @ViewChild('container')
+  containerDiv: ElementRef;
 
   startDate = new Date();
   title = COURSES[0].description;
@@ -25,6 +28,7 @@ export class ComponentCoreDirectivesPipesComponent {
   onCourseSelected(course: Course) {
     console.log("app component - button clicked", course);
     console.log(this.card);
+    console.log("containerDiv" , this.containerDiv);
   }
 
   trackCourse(index: number, course: Course) {
