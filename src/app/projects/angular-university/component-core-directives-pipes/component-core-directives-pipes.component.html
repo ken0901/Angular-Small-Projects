@@ -4,7 +4,7 @@
          src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 
 </div>
-<div class="demo">
+<!-- <div class="demo">
     <div>Today's Date: {{startDate | date: 'MM/dd/yyyy'}}</div>
     <div>{{title | titlecase}}</div>
     <div>{{price | number: '3.3-5'}}</div>
@@ -13,14 +13,19 @@
 
 <div *ngFor="let pair of course | keyvalue">
     {{pair.key + ': ' + pair.value}}
-</div>
+</div> -->
 
-{{ courses | json}}
+<!-- {{ courses | json}} -->
 
 <div>
     <div class="courses">
 
-        <app-course-card *ngFor="let course of courses | slice:0:2; 
+        <app-course-card *ngFor="let course of courses;  index as i;"
+            (courseSelected)="onCourseSelected($event)" 
+            [course]="course"
+            [index]="i + 1"
+        ></app-course-card>
+        <!-- <app-course-card *ngFor="let course of courses | slice:0:2; 
                         index as i; first as isFirst; last as isLast;
                         even as isEven; odd as isOdd"
                 (courseSelected)="onCourseSelected($event)" 
@@ -30,7 +35,7 @@
                 [class.is-last]="isLast"
                 [class.is-even]="isEven"
                 [class.is-odd]="isOdd"
-        ></app-course-card>
+        ></app-course-card> -->
 
 
         <!-- @for (course of courses; track trackCourse; 
