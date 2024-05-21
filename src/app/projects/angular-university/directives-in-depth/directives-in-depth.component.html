@@ -1,0 +1,24 @@
+<div class="top-menu">
+
+    <img class="logo"
+         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+
+<div class="courses" *ngIf="courses[0] as course">
+
+    <directives-course-card highlighted
+            (courseSelected)="onCourseSelected($event)"
+                 [course]="course">
+
+        <course-image [src]="course.iconUrl"></course-image>
+
+        <div class="course-description">
+            {{ course.longDescription }}
+        </div>
+
+    </directives-course-card>
+
+    <directives-course-card highlighted [course]="courses[2]"></directives-course-card>
+
+</div>

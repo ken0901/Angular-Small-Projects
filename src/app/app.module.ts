@@ -12,6 +12,7 @@ import { BookManagementModule } from './projects/ngrx-book-management/book-manag
 import { SocialPlatformModule } from './projects/social-platform/social-platform.module';
 import { SocialAppModule } from './projects/social-app/social-app.module';
 import { ComponentCoreDirectivesPipesModule } from './projects/angular-university/component-core-directives-pipes/component-core-directives-pipes.module';
+import { DirectivesInDepthModule } from './projects/angular-university/directives-in-depth/directives-in-depth.module';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { ComponentCoreDirectivesPipesModule } from './projects/angular-universit
         // BookManagementModule,
         SocialPlatformModule,
         SocialAppModule,
-        ComponentCoreDirectivesPipesModule
+        ComponentCoreDirectivesPipesModule,
+        DirectivesInDepthModule
     ],
     providers: [
     ],
