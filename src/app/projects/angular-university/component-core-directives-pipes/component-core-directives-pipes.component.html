@@ -25,7 +25,10 @@
             (courseSelected)="onCourseSelected($event)" 
             [course]="course"
             [index]="i + 1"
-        ></app-course-card>
+        >
+            <h5>ng content</h5>
+        
+        </app-course-card>
         <!-- <app-course-card *ngFor="let course of courses | slice:0:2; 
                         index as i; first as isFirst; last as isLast;
                         even as isEven; odd as isOdd"
