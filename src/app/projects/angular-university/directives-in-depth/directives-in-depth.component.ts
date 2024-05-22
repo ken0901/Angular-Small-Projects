@@ -27,4 +27,8 @@ export class DirectivesInDepthComponent implements AfterViewInit{
   onCourseSelected(course:DirectivesCourse) {
 
   }
+
+  onToggle(isHighlighted: boolean) {
+    console.log(isHighlighted);
+}
 }
