@@ -13,13 +13,13 @@ import { HighlightedDirective } from './directives/highlighted.directive';
   declarations: [
     DirectivesInDepthComponent,
     DirectivesCourseCardComponent,
-    CourseImageComponent
+    CourseImageComponent,
+    HighlightedDirective
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     DirectivesInDepthRoutingModule,
-    HighlightedDirective
   ],
   exports: [
     DirectivesInDepthComponent

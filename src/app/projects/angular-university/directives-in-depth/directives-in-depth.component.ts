@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildre
 import { COURSES } from 'src/data/db-data';
 import { DirectivesCourse } from './model/course';
 import { DirectivesCourseCardComponent } from './course-card/directives-course-card.component';
+import { HighlightedDirective } from './directives/highlighted.directive';
 
 
 @Component({
@@ -16,12 +17,15 @@ export class DirectivesInDepthComponent implements AfterViewInit{
   @ViewChildren(DirectivesCourseCardComponent, {read: ElementRef})
   cards : QueryList<ElementRef>;
 
+  @ViewChild(DirectivesCourseCardComponent, {read:HighlightedDirective})
+  highlighted: HighlightedDirective;
+
   constructor() {
 
   }
 
   ngAfterViewInit() {
-
+    console.log(this.highlighted);
   }
 
   onCourseSelected(course:DirectivesCourse) {
