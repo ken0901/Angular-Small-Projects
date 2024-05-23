@@ -12,8 +12,10 @@
                 (toggleHighlight)="onToggle($event)"
                 (courseSelected)="onCourseSelected($event)"
                      [course]="course">
-    
-            <course-image [src]="course.iconUrl"></course-image>
+
+            
+            <course-image [src]="course.iconUrl"  *ngxUnless="!course.iconUrl"></course-image>
+            
     
             <div class="course-description" >
                 {{ course.longDescription }}
