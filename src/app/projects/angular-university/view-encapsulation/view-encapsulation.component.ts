@@ -26,8 +26,4 @@ export class ViewEncapsulationComponent implements AfterViewInit{
   onCourseSelected(course:ViewCourse) {
 
   }
-
-  onToggle(isHighlighted: boolean) {
-    console.log(isHighlighted);
-}
 }

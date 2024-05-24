@@ -17,8 +17,8 @@ export class ViewCourseCardComponent implements OnInit, AfterViewInit, AfterCont
     @Output('courseSelected')
     courseEmitter = new EventEmitter<ViewCourse>();
 
-    @ContentChildren(ViewCourseImageComponent, {read: ElementRef})
-    images: QueryList<ElementRef>;
+    // @ContentChildren(ViewCourseImageComponent, {read: ElementRef})
+    // images: QueryList<ElementRef>;
 
     constructor() {
 
