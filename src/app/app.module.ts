@@ -14,6 +14,7 @@ import { SocialAppModule } from './projects/social-app/social-app.module';
 import { ComponentCoreDirectivesPipesModule } from './projects/angular-university/component-core-directives-pipes/component-core-directives-pipes.module';
 import { DirectivesInDepthModule } from './projects/angular-university/directives-in-depth/directives-in-depth.module';
 import { ViewEncapsulationModule } from './projects/angular-university/view-encapsulation/view-encapsulation.module';
+import { ServiceInDepthModule } from './projects/angular-university/service-in-depth/service-in-depth.module';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { ViewEncapsulationModule } from './projects/angular-university/view-enca
         SocialAppModule,
         ComponentCoreDirectivesPipesModule,
         DirectivesInDepthModule,
-        ViewEncapsulationModule
+        ViewEncapsulationModule,
+        ServiceInDepthModule
     ],
     providers: [
     ],
