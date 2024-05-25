@@ -1,0 +1,22 @@
+<div class="top-menu">
+
+    <img class="logo"
+         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+  
+  </div>
+  
+  <div>
+  
+    <div class="courses">
+  
+      <service-course-card *ngFor="let course of courses"
+                   [course]="course">
+  
+        <service-course-image [src]="course.iconUrl"></service-course-image>
+  
+      </service-course-card>
+  
+    </div>
+  
+  
+  </div>
