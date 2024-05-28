@@ -1,5 +1,7 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { COURSES } from 'src/data/db-data';
+
 
 @Component({
   selector: 'service-in-depth',
@@ -8,12 +10,21 @@ import { COURSES } from 'src/data/db-data';
 })
 export class ServiceInDepthComponent implements OnInit{
   
-  courses = COURSES;
+  courses;
 
-  constructor() {
+  constructor(private http: HttpClient) {
 
   }
 
   ngOnInit() {
+    const params = new HttpParams()
+      .set("page", "1", )
+      .set("pageSize", "10");
+
+
+    this.http.get('/api/courses', {params})
+      .subscribe(
+        val => this.courses = val
+    );
   }
 }
