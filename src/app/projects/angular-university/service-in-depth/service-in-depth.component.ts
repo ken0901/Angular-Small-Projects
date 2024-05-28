@@ -1,7 +1,12 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { COURSES } from 'src/data/db-data';
+import { Course } from '../component-core-directives-pipes/model/course';
 
+export interface coursesType {
+  payload: []
+}
 
 @Component({
   selector: 'service-in-depth',
@@ -10,6 +15,7 @@ import { COURSES } from 'src/data/db-data';
 })
 export class ServiceInDepthComponent implements OnInit{
   
+  courses$: Observable<Course[]>;
   courses;
 
   constructor(private http: HttpClient) {
@@ -21,7 +27,7 @@ export class ServiceInDepthComponent implements OnInit{
       .set("page", "1", )
       .set("pageSize", "10");
 
-
+    this.courses$ = this.http.get<Course[]>('/api/courses', {params});
     this.http.get('/api/courses', {params})
       .subscribe(
         val => this.courses = val

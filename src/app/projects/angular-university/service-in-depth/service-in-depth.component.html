@@ -6,8 +6,10 @@
   </div>
   
   <div>
-  
+    
+    <!-- <div class="courses" *ngIf="courses$ | async as courses"> -->
     <div class="courses">
+      <!-- (courses$ | async) -->
       <service-course-card *ngFor="let course of courses.payload"
                    [course]="course">
   
