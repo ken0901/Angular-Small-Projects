@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { COURSES } from 'src/data/db-data';
 import { Course } from '../component-core-directives-pipes/model/course';
+import { CoursesService } from './services/courses.service';
 
 export interface coursesType {
   payload: []
@@ -18,7 +19,9 @@ export class ServiceInDepthComponent implements OnInit{
   courses$: Observable<Course[]>;
   courses;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private coursesService: CoursesService
+  ) {
 
   }
 
