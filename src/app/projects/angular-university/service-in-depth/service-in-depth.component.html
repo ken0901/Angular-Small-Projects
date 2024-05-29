@@ -8,10 +8,9 @@
   <div>
     
     <div class="courses" *ngIf="courses$ | async as courses">
-    <!-- <div class="courses"> -->
-      <!-- (courses$ | async) -->
       <service-course-card *ngFor="let course of courses"
-                   [course]="course">
+                  (courseChanged)="save($event)"
+                  [course]="course">
   
         <service-course-image [src]="course.iconUrl"></service-course-image>
   

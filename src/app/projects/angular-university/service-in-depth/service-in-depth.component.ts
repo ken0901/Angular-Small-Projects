@@ -36,4 +36,10 @@ export class ServiceInDepthComponent implements OnInit{
     //     val => this.courses = val
     // );
   }
+
+  save(course:ServiceCourse) {
+    this.coursesService.saveCourse(course).subscribe(
+      () => console.log('course saved!')
+    );
+  }
 }
