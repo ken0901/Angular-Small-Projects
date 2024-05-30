@@ -1,29 +1,28 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, InjectionToken, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { COURSES } from 'src/data/db-data';
-import { Course } from '../component-core-directives-pipes/model/course';
 import { CoursesService } from './services/courses.service';
 import { ServiceCourse } from './model/course';
+import { HttpClient } from '@angular/common/http';
 
-export interface coursesType {
-  payload: []
+function coursesServiceProvider(http:HttpClient): CoursesService {
+  return new CoursesService(http);
 }
+
+const COURSES_SERVICE = new InjectionToken<CoursesService>('COURSES_SERVICE');
 
 @Component({
   selector: 'service-in-depth',
   templateUrl: './service-in-depth.component.html',
-  styleUrls: ['./service-in-depth.component.css']
+  styleUrls: ['./service-in-depth.component.css'],
+  providers: [
+    {provide: COURSES_SERVICE, useFactory: coursesServiceProvider, deps: [HttpClient]}
+  ]
 })
 export class ServiceInDepthComponent implements OnInit{
   
   courses$: Observable<ServiceCourse[]>;
 
-  constructor(private http: HttpClient,
-              private coursesService: CoursesService
-  ) {
-
-  }
+  constructor(@Inject(COURSES_SERVICE) private coursesService: CoursesService) {}
 
   ngOnInit() {
     this.courses$ = this.coursesService.loadCourses();
