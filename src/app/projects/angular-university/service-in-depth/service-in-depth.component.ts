@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CoursesService } from './services/courses.service';
 import { ServiceCourse } from './model/course';
+import { COURSES } from 'src/data/db-data';
 
 @Component({
   selector: 'service-in-depth',
@@ -10,14 +11,15 @@ import { ServiceCourse } from './model/course';
 })
 export class ServiceInDepthComponent implements OnInit{
   
+  courses = COURSES;
+
   courses$: Observable<ServiceCourse[]>;
 
   constructor(private coursesService: CoursesService) {
-    console.log("root component " + this.coursesService.id);
   }
 
   ngOnInit() {
-    this.courses$ = this.coursesService.loadCourses();
+    // this.courses$ = this.coursesService.loadCourses();
     // this.coursesService.loadCourses().subscribe(res => {
     //   console.log(res);
     //   this.courses = res;

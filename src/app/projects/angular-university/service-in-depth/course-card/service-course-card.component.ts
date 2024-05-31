@@ -28,4 +28,8 @@ export class ServiceCourseCardComponent implements OnInit{
     onSaveClicked(description:string) {
         this.courseEmitter.emit({...this.course, description});
     }
+
+    onTitleChange(newTitle: string) {
+      this.course.description = newTitle;
+    }
 }
