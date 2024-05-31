@@ -7,9 +7,6 @@ import { ServiceCourse } from './model/course';
   selector: 'service-in-depth',
   templateUrl: './service-in-depth.component.html',
   styleUrls: ['./service-in-depth.component.css'],
-  providers: [
-    CoursesService
-  ]
 })
 export class ServiceInDepthComponent implements OnInit{
   
