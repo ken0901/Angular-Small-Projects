@@ -5,7 +5,7 @@ import { CoursesService } from '../services/courses.service';
 @Component({
   selector: 'service-course-card',
   templateUrl: './service-course-card.component.html',
-  styleUrls: ['./service-course-card.component.css']
+  styleUrls: ['./service-course-card.component.css'],
 })
 export class ServiceCourseCardComponent implements OnInit{
     @Input()
@@ -22,7 +22,7 @@ export class ServiceCourseCardComponent implements OnInit{
     }
 
     ngOnInit() {
-
+      console.log("coursesService course card" , this.coursesService.id);
     }
 
     onSaveClicked(description:string) {

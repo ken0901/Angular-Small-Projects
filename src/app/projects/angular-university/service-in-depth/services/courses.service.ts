@@ -3,12 +3,19 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ServiceCourse } from '../model/course';
 
-@Injectable({
-  providedIn: 'root'
-})
+let counter = 0;
+
+@Injectable()
 export class CoursesService {
 
-  constructor(private http: HttpClient) { }
+  id: number;
+
+  constructor(private http: HttpClient) {
+    counter++;
+
+    this.id = counter;
+    
+   }
 
   loadCourses(): Observable<ServiceCourse[]> {
     const params = new HttpParams()

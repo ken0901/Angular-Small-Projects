@@ -15,7 +15,9 @@ export class ServiceInDepthComponent implements OnInit{
   
   courses$: Observable<ServiceCourse[]>;
 
-  constructor(private coursesService: CoursesService) {}
+  constructor(private coursesService: CoursesService) {
+    console.log("root component " + this.coursesService.id);
+  }
 
   ngOnInit() {
     this.courses$ = this.coursesService.loadCourses();
