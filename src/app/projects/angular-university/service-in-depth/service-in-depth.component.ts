@@ -35,4 +35,11 @@ export class ServiceInDepthComponent implements OnInit{
       () => console.log('course saved!')
     );
   }
+  onEditCourse() {
+    const course = this.courses[0];
+    const newCourse = {...course};
+    newCourse.description = 'New Value';
+
+    this.courses[0] = newCourse;
+  }
 }

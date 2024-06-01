@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ServiceCourse } from '../model/course';
 import { CoursesService } from '../services/courses.service';
 
@@ -6,6 +6,7 @@ import { CoursesService } from '../services/courses.service';
   selector: 'service-course-card',
   templateUrl: './service-course-card.component.html',
   styleUrls: ['./service-course-card.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ServiceCourseCardComponent implements OnInit{
     @Input()
