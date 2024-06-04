@@ -18,6 +18,13 @@ export class ServiceInDepthComponent implements OnInit{
   constructor(private coursesService: CoursesService) {
   }
 
+  /**
+   *  1. constructor
+   *  2. ngOnInit
+   * 
+   *  ngOnDestory - unsubscribe
+   */
+
   ngOnInit() {
     // this.courses$ = this.coursesService.loadCourses();
     // this.coursesService.loadCourses().subscribe(res => {
