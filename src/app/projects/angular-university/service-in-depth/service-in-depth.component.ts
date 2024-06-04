@@ -20,8 +20,10 @@ export class ServiceInDepthComponent implements OnInit{
 
   /**
    *  1. constructor
-   *  2. ngOnInit
-   * 
+   *  2. ngOnChanges
+   *  3. ngOnInit
+   *  
+   *  ngOnChanges - changes (built in) - whenever change any values
    *  ngOnDestory - unsubscribe
    */
 
