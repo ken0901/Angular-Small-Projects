@@ -22,6 +22,7 @@ export class ServiceInDepthComponent implements OnInit{
    *  1. constructor
    *  2. ngOnChanges
    *  3. ngOnInit
+   *  4. ngAfterContentChecked
    *  
    *  ngOnChanges - changes (built in) - whenever change any values
    *  ngOnDestory - unsubscribe
