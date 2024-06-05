@@ -8,6 +8,7 @@ import { ServiceHighlightedDirective } from './directives/service-highlighted.di
 import { ServiceNgxUnlessDirective } from './directives/service-ngx-unless.directive';
 import { ServiceCourseCardComponent } from './course-card/service-course-card.component';
 import { ServiceImageComponent } from './course-image/service-course-image.component';
+import { FilterByCategoryPipe } from './pipe/filter-by-category.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ServiceImageComponent } from './course-image/service-course-image.compo
     ServiceImageComponent,
     ServiceCourseCardComponent,
     ServiceHighlightedDirective,
-    ServiceNgxUnlessDirective
+    ServiceNgxUnlessDirective,
+    FilterByCategoryPipe
   ],
   imports: [
     BrowserModule,
