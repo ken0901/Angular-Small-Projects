@@ -3,6 +3,7 @@ import { Course } from '../../component-core-directives-pipes/model/course';
 
 @Pipe({
   name: 'filterByCategory',
+  pure: false
 })
 export class FilterByCategoryPipe implements PipeTransform {
 
